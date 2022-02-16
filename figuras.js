@@ -24,9 +24,22 @@ function perimetroTriangulo(lado1, lado2, base) {
 } 
 console.groupEnd();
 
+//Codigo de triangulo isoseles
+
+console.group("Triangulo Isoseles")
+
+function alturaTrianguloIsoseles(lado, base){
+    return Math.sqrt((lado*lado)-(base*base)/4);
+    
+}
+function areaTrianguloIsoseles(lado, base){
+    const altura = alturaTrianguloIsoseles(lado,base);
+    const area = (base * altura) /2
+    return area;
+}
+console.groupEnd();
 
 //Codigo del circulo
-
 
 console.group("Circulos");
 
@@ -80,6 +93,28 @@ function calcularAreaTriangulo(){
     const area = areaTriangulo(value1, value2);
     alert (area);
 }
+
+
+
+function calcularAlturaTrianguloIsoseles(){
+    const input = document.getElementById("inputLadoIsoseles")
+    const input1 = document.getElementById("inputBaseIsoseles")
+    const value = parseInt(input.value);
+    const value1 = parseInt(input1.value);
+    const altura = alturaTrianguloIsoseles(value, value1);
+    alert(altura);
+}
+
+function calcularAreaTrianguloIsoseles(){
+    const input = document.getElementById("inputLadoIsoseles")
+    const input1 = document.getElementById("inputBaseIsoseles")
+    const value = parseInt(input.value);
+    const value1 = parseInt(input1.value);
+    const area = areaTrianguloIsoseles(value, value1);
+    alert(area);
+}
+
+
 
 function calcularDiametroCirculo(){
     const input = document.getElementById("inputRadio");
